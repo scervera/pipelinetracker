@@ -1,0 +1,5 @@
+<%= form_with(model: [@opportunity, Comment.new] ) do |form| %>
+      <%= form.hidden_field :author, value: current_user.fullname %>
+      Add Note: <%= form.text_area(:content, cols: 70, rows: 1) %>
+      <%= form.submit %>
+<% end %>

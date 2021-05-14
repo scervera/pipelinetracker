@@ -1,0 +1,66 @@
+
+<div class="row mb-2">
+  <%= render 'top_form_nav' %>
+  <div class="col-md-12"><h2>Opportunity Details for: <%= @opportunity.customer_name %></h2></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <table class="table table-sm table-responsive-sm border border-dark bg-light">
+      <thead class="thead-dark">
+        <th>Details</th>
+        <th></th>
+      </thead>
+      <tbody>
+          <tr>
+            <td><strong>Stage</strong></td>
+            <td><%= @opportunity.stage %></td>
+          </tr>
+          <tr>
+            <td><strong>Quantity</strong></td>
+            <td><%= @opportunity.quantity %></td>
+          </tr>
+          <tr>
+            <td><strong>Product</strong></td>
+            <td><%= @opportunity.product.model %></td>
+          </tr>
+          <tr>
+            <td><strong>Use Case</strong></td>
+            <td><%= @opportunity.use_case %></td>
+          </tr>
+      </tbody>
+    </table>
+    <%= link_to 'Edit Opportunity', edit_opportunity_path(@opportunity), class: "btn btn-primary btn-lg mt-2 mb-4 btn-block" %>
+  </div>
+<!-- Right side column -->
+  <div class="col-md-8">
+    <table class="table table-sm table-responsive-sm border border-dark bg-light">
+      <thead class="thead-dark">
+        <tr>
+          <th>Author</th>
+          <th>Notes</th>
+          <th>Created On</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @opportunity.comments.each do |comment| %>
+          <tr>
+            <td><%= comment.author %></td>
+            <td><%= comment.content %></td>
+            <td><%= comment.created_at.strftime("%m/%d/%Y") %></td>
+            <td><%#= link_to 'Edit Comment', edit_opportunity_comment_path(@opportunity, comment) %>
+              <%= link_to edit_opportunity_comment_path(@opportunity, comment) do %>
+                  <%= fa_icon "pencil-alt 1x" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Add Notes', new_opportunity_comment_path(@opportunity), class: "btn btn-primary btn-sm mt-2 mb-4" %>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,92 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8">
+        <h1><%= @page_title %></h1>
+    </div>
+    <div class="col-lg-4">
+      <%= link_to 'New Opportunity', new_opportunity_path, class: "btn btn-primary mb-4 btn-sm float-right" %>
+    </div>
+  </div>
+  <!-- Search Row -->
+  <div class="row">
+    <div class="col-lg-12 bg-light clearfix p-4 form-group rounded-lg">
+      <div class="row">
+        <div class="col-lg-12 text-right mb-4">
+          <div class="search">
+            <%= form_tag(search_opportunities_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+                Search By Customer Name, AE, SE, Keyword, Use Case, sales stage, or Product <%= text_field_tag :search, params[:search], class: "form-inline my-2 my-lg-0 ml-2" %>
+              <%= submit_tag 'Search 🔍', name: nil, class: "btn btn-outline-success btn-sm form-inline my-2 my-sm-0 ml-2" %>
+            <% end %>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="text-center mb-3"><%#= paginate @opportunities unless @opportunities.empty? %></div>
+        <table class="table table-striped table-hover ">
+          <!-- <col width="200"> -->
+          <thead class="thead-dark">
+            <tr>
+              <th width="20"></th>
+              <th width="200">Customer Name</th>
+              <th>Stage</th>
+              <th>Quantity</th>
+              <th>Product</th>
+              <th>Use Case</th>
+              <th>Apple AE</th>
+              <th>Apple SE</th>
+              <th>Carrier</th>
+              <th>Last Update</th>
+              <th>Created On</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+
+          <tbody>
+          <% if @opportunities.empty? %>
+              <div class="smc-alert"> There are no records matching your search criteria </div>
+          <% else %>
+            <% @opportunities.each do |opportunity| %>
+              <tr>
+                <td class="<%= opportunity.stage %>" width="10"></td>
+                <td><%= opportunity.customer_name %></td>
+                <td><%= opportunity.stage %></td>
+                <td><%= opportunity.quantity %></td>
+                <td><%= opportunity.product.model %></td>
+                <td><%= truncate(opportunity.use_case, length: 80 ) %></td>
+                <td><%= opportunity.account_exec_user.firstname %> <%= opportunity.account_exec_user.lastname %></td>
+                <td><%= opportunity.sys_engineer_user.firstname %> <%= opportunity.sys_engineer_user.lastname %></td>
+                <td><%= opportunity.carrier %></td>
+                <td><%= time_ago_in_words(opportunity.updated_at) %> ago</td>
+                <td><%= opportunity.created_at.strftime("%m/%d/%Y") %></td>
+                <td>
+                  <%= link_to opportunity do %>
+                      <%= fa_icon "glasses 1x" %>
+                  <% end %>
+                </td>
+
+                <td>
+                  <%= link_to edit_opportunity_path(opportunity) do %>
+                      <%= fa_icon "pencil-alt 1x" %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if current_user.role == "admin" || current_user.role == "manager" %>
+                    <%= link_to opportunity, method: :delete, data: {confirm: 'Are you sure?' } do %>
+                      <%= fa_icon "trash 1x" %>
+                    <% end %>
+                  <% end %>
+                </td>  
+              </tr>
+            <% end %>
+          <% end %>
+          </tbody>
+        </table>
+         
+    </div>
+  </div>
+</div>

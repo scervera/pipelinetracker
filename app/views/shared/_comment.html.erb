@@ -1,0 +1,10 @@
+<tr>
+  <td><%= comment.author %></td>
+  <td><%= comment.content %></td>
+  <td><%= comment.created_at.strftime("%m/%d/%Y") %></td>
+  <td>
+    <%= link_to edit_opportunity_comment_path(@opportunity, comment) do %>
+      <%= fa_icon "pencil-alt 1x" %>
+    <% end %>
+  </td>
+</tr>

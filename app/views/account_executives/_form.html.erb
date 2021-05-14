@@ -1,0 +1,32 @@
+<%= form_with(model: account_executive, local: true) do |form| %>
+  <% if account_executive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account_executive.errors.count, "error") %> prohibited this account_executive from being saved:</h2>
+
+      <ul>
+      <% account_executive.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carrier %>
+    <%= form.text_field :carrier %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

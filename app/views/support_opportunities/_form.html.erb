@@ -1,0 +1,51 @@
+<!-- /support_opportunities/_form.html.erb -->
+<div class="col-md-12 col-sm-12">
+  <%= form_with(model: [@opportunity, support_opportunity], local: true) do |form| %>
+    <% if support_opportunity.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(support_opportunity.errors.count, "error") %> prohibited this support_opportunity from being saved:</h2>
+
+        <ul>
+        <% support_opportunity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="col-md-6 col-sm-12">
+
+
+          <div class="form-group">
+            <%= form.label :product %>
+            <%= form.collection_select(:apple_care_id, AppleCare.all.applecare_by_id, :id, :product,
+                          {
+                            selected: support_opportunity.apple_care_id,
+                            include_blank: true
+                          },
+                          class: 'form-control'
+                        )
+            %>
+          </div>
+<!-- NEED TO FIX THIS SO IT SHOWS THE CURRENT VALUE OF fiscal_quarter -->
+          <div class="form-group">
+            <%= form.label :fiscal_quarter %>
+            <%= form.select(:fiscal_quarter, options_for_select(["Q1", "Q2", "Q3", "Q4"]), { :selected => :fiscal_quarter || nil }, { :class => 'form-control' } ) %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :fiscal_year %>
+    
+            <%= form.date_select :fiscal_year, {start_year: Time.now.year, end_year: Time.now.year + 4, discard_month: true}, { :class => 'form-control' } %>
+          </div>
+    </div>
+
+      <div class="col-md-12 col-sm-12">
+        <%= form.submit class: "btn btn-primary btn-block mt-1 mb-4" %>
+      </div>  
+  <% end %>
+</div>
+<!-- </div> -->
+
+
+
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @account_executive.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @account_executive.lastname %>
+</p>
+
+<p>
+  <strong>Carrier:</strong>
+  <%= @account_executive.carrier %>
+</p>
+
+<%= link_to 'Edit', edit_account_executive_path(@account_executive) %> |
+<%= link_to 'Back', account_executives_path %>

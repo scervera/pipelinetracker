@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% if @page_title %><%= @page_title %><% else %>Pipeline Tracker <% end %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/2f71097ca0.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%= render "/shared/navbar" %>
+    <div class="container-fluid">     
+      <!-- <p><%#= current_user.lastname %></p>
+      <p><%#= current_user.carrier %></p> -->
+      <p><%= params.inspect %></p>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+      <%= yield %>
+    </div>
+  </body>
+</html>

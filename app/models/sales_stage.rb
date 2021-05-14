@@ -1,0 +1,3 @@
+class SalesStage < ApplicationRecord
+
+end

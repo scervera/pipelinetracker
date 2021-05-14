@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sales Stages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_stages.each do |sales_stage| %>
+      <tr>
+        <td><%= sales_stage.stage %></td>
+        <td><%= link_to 'Show', sales_stage %></td>
+        <td><%= link_to 'Edit', edit_sales_stage_path(sales_stage) %></td>
+        <td><%= link_to 'Destroy', sales_stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales Stage', new_sales_stage_path %>

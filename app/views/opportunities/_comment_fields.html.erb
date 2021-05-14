@@ -1,0 +1,7 @@
+   
+<div class='nested-fields'>
+	<%= f.hidden_field :author, value: current_user.fullname %>
+    <%= f.text_area :content %>
+    <%= link_to_remove_association( "remove comment", f, {}) %>
+</div>
+    

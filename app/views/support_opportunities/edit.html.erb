@@ -1,0 +1,11 @@
+	<!-- /support_opportunities/show.html.erb  -->
+
+	<div class="row">
+        <div class="col-sm-12 col-md-12">
+			<%= link_to 'Back to Pipeline List', support_opportunities_path, class: "btn btn-primary btn-lg mt-2 mb-5 float-right" %>
+		</div>
+		<div class="col-sm-12 col-md-12">
+			<h2>Editing Support Opportunity for <%= @support_opportunity.opportunity.customer_name %></h2>
+		</div>
+		<%= render 'form', support_opportunity: @support_opportunity %>	
+    </div>

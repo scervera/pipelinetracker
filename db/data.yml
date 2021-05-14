@@ -1,0 +1,678 @@
+
+---
+account_executives:
+  columns:
+  - id
+  - firstname
+  - lastname
+  - carrier
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Chris
+    - Webster
+    - Verizon
+    - '2020-04-11 19:52:05.786428'
+    - '2020-04-11 19:52:05.786428'
+  - - 2
+    - Steve
+    - Jaegar
+    - Verizon
+    - '2020-04-11 19:52:05.789342'
+    - '2020-04-11 19:52:05.789342'
+  - - 3
+    - Renee
+    - Bruning
+    - AT&T
+    - '2020-04-11 19:52:05.791754'
+    - '2020-04-11 19:52:05.791754'
+  - - 4
+    - Beth
+    - Wong
+    - AT&T
+    - '2020-04-11 19:52:05.794017'
+    - '2020-04-11 19:52:05.794017'
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2020-04-10 19:48:15.221133'
+    - '2020-04-10 19:48:15.221133'
+
+---
+engineers:
+  columns:
+  - id
+  - firstname
+  - lastname
+  - carrier
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Diego
+    - Lopez
+    - Verizon
+    - '2020-04-11 19:52:05.766787'
+    - '2020-04-11 19:52:05.766787'
+  - - 2
+    - Don
+    - Gulick
+    - Verizon
+    - '2020-04-11 19:52:05.768645'
+    - '2020-04-11 19:52:05.768645'
+  - - 3
+    - Brett
+    - Byers
+    - AT&T
+    - '2020-04-11 19:52:05.770274'
+    - '2020-04-11 19:52:05.770274'
+  - - 4
+    - John
+    - Greenberg
+    - AT&T
+    - '2020-04-11 19:52:05.775048'
+    - '2020-04-11 19:52:05.775048'
+
+---
+opportunities:
+  columns:
+  - id
+  - customer_name
+  - stage
+  - quantity
+  - created_at
+  - updated_at
+  - product
+  - sales_stage
+  - purchase_method
+  - forecast_this_quarter
+  - close_date
+  - use_case
+  - industry
+  - segment
+  - source
+  - usma_owned
+  - notes
+  - earnings_nomination
+  - product_id
+  - sales_stage_id
+  - account_executive_id
+  - engineer_id
+  records: 
+  - - 1
+    - Giant Corporation 0
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.854539'
+    - '2020-04-11 20:09:36.453601'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 1
+    - 2
+  - - 2
+    - Giant Corporation 1
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.861632'
+    - '2020-04-11 20:09:53.937420'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 4
+    - 3
+  - - 3
+    - Giant Corporation 2
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.874174'
+    - '2020-04-11 19:52:05.874174'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 4
+    - Giant Corporation 3
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.880342'
+    - '2020-04-11 19:52:05.880342'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 5
+    - Giant Corporation 4
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.888193'
+    - '2020-04-11 19:52:05.888193'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 6
+    - Giant Corporation 5
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.895521'
+    - '2020-04-11 19:52:05.895521'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 7
+    - Giant Corporation 6
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.901527'
+    - '2020-04-11 19:52:05.901527'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 8
+    - Giant Corporation 7
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.908233'
+    - '2020-04-11 19:52:05.908233'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 9
+    - Giant Corporation 8
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.913815'
+    - '2020-04-11 19:52:05.913815'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 10
+    - Giant Corporation 9
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.921005'
+    - '2020-04-11 19:52:05.921005'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 11
+    - Giant Corporation 10
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.926937'
+    - '2020-04-11 19:52:05.926937'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 12
+    - Giant Corporation 11
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.933085'
+    - '2020-04-11 19:52:05.933085'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 13
+    - Giant Corporation 12
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.940164'
+    - '2020-04-11 19:52:05.940164'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 14
+    - Giant Corporation 13
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.947769'
+    - '2020-04-11 19:52:05.947769'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 15
+    - Giant Corporation 14
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.954822'
+    - '2020-04-11 19:52:05.954822'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 16
+    - Giant Corporation 15
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.963933'
+    - '2020-04-11 19:52:05.963933'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 17
+    - Giant Corporation 16
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.970571'
+    - '2020-04-11 19:52:05.970571'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 18
+    - Giant Corporation 17
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.976257'
+    - '2020-04-11 19:52:05.976257'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 19
+    - Giant Corporation 18
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.981746'
+    - '2020-04-11 19:52:05.981746'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+  - - 20
+    - Giant Corporation 19
+    - 
+    - 1500
+    - '2020-04-11 19:52:05.989510'
+    - '2020-04-11 19:52:05.989510'
+    - 
+    - 
+    - 
+    - 
+    - 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+    - 
+    - 
+    - 
+    - false
+    - 
+    - false
+    - 1
+    - 3
+    - 2
+    - 1
+
+---
+products:
+  columns:
+  - id
+  - category
+  - model
+  - storage
+  - color
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 
+    - iPhone 11 128G Blk
+    - 
+    - 
+    - '2020-04-11 19:52:05.733394'
+    - '2020-04-11 19:52:05.733394'
+  - - 2
+    - 
+    - iPhone 11 128G Blk
+    - 
+    - 
+    - '2020-04-11 19:52:05.735077'
+    - '2020-04-11 19:52:05.735077'
+  - - 3
+    - 
+    - iPhone 11 128G Blk
+    - 
+    - 
+    - '2020-04-11 19:52:05.736437'
+    - '2020-04-11 19:52:05.736437'
+  - - 4
+    - 
+    - iPad 7th gen 32G Space
+    - 
+    - 
+    - '2020-04-11 19:52:05.738019'
+    - '2020-04-11 19:52:05.738019'
+  - - 5
+    - 
+    - iPad 7th gen 128G Space
+    - 
+    - 
+    - '2020-04-11 19:52:05.739569'
+    - '2020-04-11 19:52:05.739569'
+  - - 6
+    - 
+    - iPad 7th gen 32G Silver
+    - 
+    - 
+    - '2020-04-11 19:52:05.740872'
+    - '2020-04-11 19:52:05.740872'
+  - - 7
+    - 
+    - iPad 7th gen 128G Silver
+    - 
+    - 
+    - '2020-04-11 19:52:05.742251'
+    - '2020-04-11 19:52:05.742251'
+  - - 8
+    - 
+    - iPad 7th gen 32G Black
+    - 
+    - 
+    - '2020-04-11 19:52:05.743475'
+    - '2020-04-11 19:52:05.743475'
+  - - 9
+    - 
+    - iPad 7th gen 128G Black
+    - 
+    - 
+    - '2020-04-11 19:52:05.744823'
+    - '2020-04-11 19:52:05.744823'
+
+---
+sales_stages:
+  columns:
+  - id
+  - stage
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - None
+    - '2020-04-11 19:52:05.750670'
+    - '2020-04-11 19:52:05.750670'
+  - - 2
+    - Prospect/Qualify
+    - '2020-04-11 19:52:05.752406'
+    - '2020-04-11 19:52:05.752406'
+  - - 3
+    - Propose
+    - '2020-04-11 19:52:05.754120'
+    - '2020-04-11 19:52:05.754120'
+  - - 4
+    - Negotiate
+    - '2020-04-11 19:52:05.755981'
+    - '2020-04-11 19:52:05.755981'
+  - - 5
+    - Lost
+    - '2020-04-11 19:52:05.757846'
+    - '2020-04-11 19:52:05.757846'
+  - - 6
+    - Shipped
+    - '2020-04-11 19:52:05.759229'
+    - '2020-04-11 19:52:05.759229'

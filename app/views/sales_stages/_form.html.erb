@@ -1,0 +1,22 @@
+<%= form_with(model: sales_stage, local: true) do |form| %>
+  <% if sales_stage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sales_stage.errors.count, "error") %> prohibited this sales_stage from being saved:</h2>
+
+      <ul>
+      <% sales_stage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :stage %>
+    <%= form.text_field :stage %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

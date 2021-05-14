@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @comment.author %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <strong>Opportunity Name:</strong>
+  <%= @comment.opportunity.customer_name %>
+</p>
+
+<%= link_to 'Edit', edit_opportunity_comment_path(@opportunity, @comment) %> |
+<%= link_to 'Back', opportunity_comments_path(@opportunity) %>

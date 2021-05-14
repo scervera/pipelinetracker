@@ -1,0 +1,2 @@
+module SalepeopleHelper
+end

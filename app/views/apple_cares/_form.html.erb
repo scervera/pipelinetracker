@@ -1,0 +1,22 @@
+<%= form_with(model: apple_care, local: true) do |form| %>
+  <% if apple_care.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(apple_care.errors.count, "error") %> prohibited this apple_care from being saved:</h2>
+
+      <ul>
+      <% apple_care.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product %>
+    <%= form.text_area :product %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

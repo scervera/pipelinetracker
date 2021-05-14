@@ -1,0 +1,109 @@
+
+<div class="row mb-2">
+  <div class="col-sm-12 col-md-12">
+    <%= link_to 'Back to Pipeline List', opportunities_path, class: "btn btn-primary btn-lg mt-2 mb-5 float-right" %>
+  </div>
+  <div class="col-md-12"><h2>Opportunity Details for: <%= @opportunity.customer_name %></h2></div>
+</div>
+
+<div class="row">
+  <!-- Left side column -->
+  <!-- OPPORTUNITY DETAILS SECTION -->
+  <div class="col-md-6 float-left">
+    <table class="table table-sm table-responsive-sm border border-dark bg-light">
+      <thead class="thead-dark">
+        <th>Details</th>
+        <th></th>
+      </thead>
+      <tbody>
+          <tr>
+            <td><strong>Stage</strong></td>
+            <td><%= @opportunity.stage %></td>
+          </tr>
+          <tr>
+            <td><strong>Quantity</strong></td>
+            <td><%= @opportunity.quantity %></td>
+          </tr>
+          <tr>
+            <td><strong>Product</strong></td>
+            <td><%= @opportunity.product.model %></td>
+          </tr>
+          <tr>
+            <td><strong>Use Case</strong></td>
+            <td><%= @opportunity.use_case %></td>
+          </tr>
+          <tr>
+            <td><strong>Tracking?</strong></td>
+            <td><%= @opportunity.tracking %></td>
+          </tr>
+      </tbody>
+    </table>
+    <%= link_to 'Edit Opportunity', edit_opportunity_path(@opportunity), class: "btn btn-primary btn-lg mt-2 mb-4 btn-block" %>
+  </div>
+  <!-- Left side column -->
+  <!-- APPLECARE OPPORTUNITIES SECTION -->
+  <div class="col-md-6 float-left">
+    <table class="table table-sm table-responsive-sm border border-dark bg-light">
+      <thead class="thead-dark">
+        <th><strong>AppleCare Product</strong></th>
+        <th><strong>Anticipated Close</strong></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @opportunity.support_opportunities.each do |support_opportunity| %>
+          <tr>
+            <td><%= support_opportunity.apple_care.product %></td>
+            <td><%= support_opportunity.fiscal_quarter %> <%= support_opportunity.fiscal_year.strftime("%Y") %>
+            </td>
+            <td>
+              <%= link_to opportunity_support_opportunity_path(@opportunity, support_opportunity) do %>
+                  <%= fa_icon "glasses 1x" %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_opportunity_support_opportunity_path(@opportunity, support_opportunity) do %>
+                  <%= fa_icon "pencil-alt 1x" %>
+              <% end %>
+            </td>
+            <td>
+              <%# if current_user.role == "admin" || current_user.role == "manager" %>
+                <%= link_to [@opportunity, support_opportunity], method: :delete, data: {confirm: 'Are you sure?' } do %>
+                  <%= fa_icon "trash 1x" %>
+                <% end %>
+              <%# end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Add AppleCare Product', new_opportunity_support_opportunity_path(@opportunity) %>
+  </div>
+<!-- Right side column -->
+<!-- COMMENTS SECTION -->
+  <div class="col-md-12 float-right">
+    <table class="table table-sm table-responsive-sm border border-dark bg-light">
+      <thead class="thead-dark">
+        <tr>
+          <th>Author</th>
+          <th>Notes</th>
+          <th>Created On</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="comments">
+        <%= render partial: '/shared/comment', collection: @opportunity.comments %>
+      </tbody>
+    </table>
+    <div id="new-comment">
+      <%= link_to 'Add Notes', new_opportunity_comment_path(@opportunity), remote: true, class: "btn btn-primary btn-sm mt-2 mb-4" %>
+    </div>
+
+  </div>
+</div>
+<div class="row">
+
+</div>
+

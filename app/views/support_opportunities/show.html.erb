@@ -1,0 +1,18 @@
+<p>
+  <strong>Customer Name:</strong>
+  <%= @support_opportunity.opportunity.customer_name %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @support_opportunity.apple_care.product %>
+</p>
+
+<p>
+  <strong>Anticipated Close Date:</strong>
+  <%= @support_opportunity.fiscal_quarter %> <%= @support_opportunity.fiscal_year.strftime("%Y") %>
+</p>
+
+<%= link_to 'Edit', edit_support_opportunity_path(@support_opportunity) %> | 
+
+<%= link_to 'Back', opportunity_path(@support_opportunity) %>

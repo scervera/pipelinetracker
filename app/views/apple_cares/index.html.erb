@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apple Cares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apple_cares.each do |apple_care| %>
+      <tr>
+        <td><%= apple_care.product %></td>
+        <td><%= link_to 'Show', apple_care %></td>
+        <td><%= link_to 'Edit', edit_apple_care_path(apple_care) %></td>
+        <td><%= link_to 'Destroy', apple_care, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apple Care', new_apple_care_path %>

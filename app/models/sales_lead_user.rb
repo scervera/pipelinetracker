@@ -1,0 +1,2 @@
+class SalesLeadUser < User
+end

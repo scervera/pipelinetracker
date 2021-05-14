@@ -1,0 +1,2 @@
+class ManagerUser < User
+end

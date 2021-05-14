@@ -1,0 +1,35 @@
+.lost {
+	background-color: red;
+}
+
+.shipped {
+	background-color: green;
+}
+
+.propose {
+    background-color: #F4930B;
+}
+
+.negotiate {
+    background-color: yellow;
+}
+
+.comment, th, td {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.carrier_logo {
+	background-image: url("<%= current_user.carrier %>.png")
+}
+
+.smc-alert {
+	background: red;
+	padding: 8px, 8px, 8px, 8px;
+	margin: 8px, 8px, 8px, 8px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1em;
+}
+

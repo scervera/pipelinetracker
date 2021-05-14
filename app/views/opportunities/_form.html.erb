@@ -1,0 +1,102 @@
+<!-- <div class="row"> -->
+<div class="col-md-12 col-sm-12">
+  <%= form_with(model: opportunity, local: true) do |form| %>
+    <% if opportunity.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
+
+        <ul>
+        <% opportunity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="col-md-6 col-sm-12">
+
+
+          <div class="form-group">
+            <%= form.label :customer_name %>
+            <%= form.text_field(:customer_name, size: 20, class: "form-control") %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :quantity %>
+            <%= form.number_field(:quantity, class: "form-control") %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :use_case %>
+            <%= form.text_area(:use_case, size: '24x3', class: "form-control") %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label "Top Opp" %> <%= form.check_box :tracking  %>
+          </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <%= form.label :sales_stage %>
+            <%= form.select(:stage, Opportunity.stages.keys.map {|stage| [stage.titleize,stage]}, {}, { :class => 'form-control' }) %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :product_id %>
+            <%= form.collection_select(:product_id, Product.all.products_by_model, :id, :model,
+                                      {
+                                        selected: opportunity.product_id,
+                                        include_blank: true
+                                      },
+                                      class: 'form-control'
+                                    )
+            %>
+          </div>
+          
+          <% unless current_user.role == "ae" %>
+            <div class="form-group">
+              <%= form.label :account_executive %>
+              <%= form.collection_select(:account_exec_user_id, AccountExecUser.all.where(carrier: current_user.carrier), :id, :email,
+                                        {
+                                          selected: opportunity.account_exec_user_id,
+                                          include_blank: true
+                                        },
+                                        class: 'form-control'
+                                      )
+              %>
+            </div>
+          <% end %>
+          <% unless current_user.role == "se" %>
+            <div class="form-group">
+              <%= form.label :systems_engineer %>
+              <%= form.collection_select(:sys_engineer_user_id, SysEngineerUser.all.where(carrier: current_user.carrier), :id, :email,
+                                        {
+                                          selected: opportunity.sys_engineer_user_id,
+                                          include_blank: true
+                                        },
+                                        class: 'form-control'
+                                      )
+              %>
+            </div>
+          <% end %>
+          <div>
+            <% if current_user.role == "admin" || current_user.role == "manager" %>
+              <%= form.select(:carrier, [['verizon'], ['att'], ['t-mobile']], { :selected => current_user.carrier }, html_options = {class: 'form-control'}) %> 
+            <% else %>
+              <%= form.hidden_field :carrier, :value => current_user.carrier %>
+              <p>Carrier Partner:</p>
+              <%= image_tag ("#{current_user.carrier}.png"), class: "carrier_logo text-center" %>
+            <% end %>
+          </div>
+
+          <%#= form.submit class: "btn btn-primary btn-block mt-1 mb-4" %>
+    </div>
+      <div class="col-md-12 col-sm-12">
+        <%= form.submit class: "btn btn-primary btn-block mt-1 mb-4" %>
+      </div>  
+  <% end %>
+</div>
+<!-- </div> -->
+
+
+
+

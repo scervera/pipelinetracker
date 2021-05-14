@@ -1,0 +1,2 @@
+module AppleCaresHelper
+end
